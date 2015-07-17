@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+SETTINGS="$DIRNAME/../settings/$SUBPROJECT-prod.json"
+
+POSTGRES_URL=$(jshon -e postgresUrl -u < $SETTINGS)
+
+POSTGRES_OUT_DIR=`echo "/tmp/postgres_$SUBPROJECT" | sed 's/\./_/g'`
+if [[ -d $POSTGRES_OUT_DIR ]]
+then
+  rm -R $POSTGRES_OUT_DIR
+fi
+
+pg_dump -v -d $POSTGRES_URL -Fd -f $POSTGRES_OUT_DIR

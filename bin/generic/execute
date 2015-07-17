@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eux
+
+source $DIRNAME/generic/getsubproject
+
+SCRIPT=$DIRNAME/$SUBPROJECT/$COMMAND
+if [[ -f "${SCRIPT}" ]]
+then
+  source $SCRIPT
+else
+  echo "Can't find `$SCRIPT`"
+  exit 1
+fi

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+COMMAND=logs
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+source $DIRNAME/generic/execute

@@ -1,0 +1,24 @@
+{
+  "servers": [
+    {
+      "host": "104.236.168.103",
+      "username": "root",
+      "pem": "~/.ssh/id_rsa_for_mup"
+    }
+  ],
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.36",
+  "setupPhantom": false,
+  "appName": "foreach",
+  "app": "~/workspace/foreach",
+  "env": {
+    "ROOT_URL": "https://foreach.pintask.me",
+    "MONGO_URL": "mongodb://foreach_mongo_user:dKqGxpqKCjxAwDi1nb6lAJ52SLEUnvMEuZchB64r7PG@c137.alcatraz.1.mongolayer.com:10137,c137.alcatraz.0.mongolayer.com:10137/foreach?replicaSet=set-552e2d96f6a233acb2000700",
+    "MONGO_OPLOG_URL": "mongodb://foreach_mongo_user:dKqGxpqKCjxAwDi1nb6lAJ52SLEUnvMEuZchB64r7PG@c137.alcatraz.1.mongolayer.com:10137,c137.alcatraz.0.mongolayer.com:10137/local?authSource=foreach"
+  },
+  "ssl": {
+    "pem": "~/Dropbox/workspace/foreach/ssl/foreach.pintask.me/ssl.pem"
+  },
+  "deployCheckWaitTime": 30
+}

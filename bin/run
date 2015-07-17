@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+source $DIRNAME/generic/getsubproject
+
+SETTINGS="$DIRNAME/../settings/$SUBPROJECT-dev.json"
+
+meteor run --settings $SETTINGS "$@"

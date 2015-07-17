@@ -1,0 +1,73 @@
+{
+  "baseUrl": "http://automation.bellefit.com",
+  "postgresUrl": "postgres://automate:A1mnDe&6O9Q@automatebellefit.cvpanrkba0uz.us-east-1.rds.amazonaws.com:5432/automate_bellefit",
+  "mailUrl": "smtp://postmaster%40sandbox13219.mailgun.org:7m4zc65nb993@smtp.mailgun.org:465/",
+  "google": {
+    "secret": "kVMzis1Z3_YBmFT8UhhI3zQ9"
+  },
+  "twitter": {
+    "secret": "mmTIGXyXtk1VHDX5gaVEqdzmq9Xwj0jET8pWEpALiOVqFhiFKW"
+  },
+  "Freshdesk": {
+    "domain": "bellefit",
+    "username": "denis.d.gorbachev@gmail.com",
+    "password": "feature"
+  },
+  "3DCart": {
+    "url": "store.bellefit.com",
+    "token": "3b1c83a651a001be522a4bf4e31d9b6b",
+    "privateKey": "47f35851856abd11e0666b5e4c0e1530"
+  },
+  "mixpanel": {
+    "key": "2be4d6e8312143f0e0161ae6517520da",
+    "secret": "088dac20b239bb96dd843ab74e57e1f2"
+  },
+  "kadira": {
+    "appId": "SbJRvZFx8kpa7AhgS",
+    "appSecret": "5acdbfa7-255e-484c-9e1a-1abf068f188b"
+  },
+  "loggly": {
+    "token": "cf776ada-93b0-48f5-aa42-d55b78b22127",
+    "subdomain": "bellefit",
+    "tags": ["bellefit"],
+    "silent": false
+  },
+  "cluster": {
+    "count": 5
+  },
+  "job": {
+    "attempts": {
+      "count": 3,
+      "delay": 500,
+      "strategy": "exponential"
+    }
+  },
+  "public": {
+    "pack": "bellefit",
+    "env": "prod",
+    "version": "__VERSION__",
+    "isDebug": false,
+    "isMaintenance": false,
+    "isOlarkEnabled": false,
+    "extension": {
+      "name": "Bellefit automation",
+      "description": "",
+      "urls": ["*://bellefit.freshdesk.com/*", "*://support.bellefit.com/*"]
+    },
+    "google": {
+      "clientId": "1015442981278-sdier0qloal31r2hana1h2q2pnc51ijk.apps.googleusercontent.com"
+    },
+    "twitter": {
+      "consumerKey": "D0faYw4BapljJyCCb0y1IVGcu"
+    },
+    "ga": {
+      "property": "__PROPERTY__",
+      "disabled": true
+    },
+    "mixpanel": {
+      "token": "839ac0309e0bb4a8a3e8859893ad60ac",
+      "disabled": true
+    },
+    "storeUrl": "store.bellefit.com"
+  }
+}

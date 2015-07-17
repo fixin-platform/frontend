@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+COMMAND=dump-download
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+source $DIRNAME/generic/execute

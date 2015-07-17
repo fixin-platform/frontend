@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+COMMAND=dump-restore
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+source $DIRNAME/generic/execute

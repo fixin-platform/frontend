@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -i ~/Dropbox/workspace/foreach/bellefit.pem -t ubuntu@54.165.220.238 "mongo foreach"

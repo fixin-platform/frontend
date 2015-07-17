@@ -1,0 +1,74 @@
+{
+  "baseUrl": "https://foreach.pintask.me",
+  "mailUrl": "smtp://postmaster%40sandbox13219.mailgun.org:7m4zc65nb993@smtp.mailgun.org:465/",
+  "google": {
+    "secret": "XS5X7eIlRXAtl9_xFGXGir1S"
+  },
+  "stripe": {
+    "secret": "sk_live_d3Qnhv1XciD0DD8XPuKMqU6A"
+  },
+  "mixpanel": {
+    "key": "b3872e30acf55e8a6f96433482373876",
+    "secret": "0cd40bc24bc1cef594be251c85a00cb7"
+  },
+  "Trello": {
+    "key": "754d48096c924712946a6bf23469ef1b",
+    "secret": "7c250dfb3efcddef840eaab97a40beee424a6c8326f5b44111a20f9e9b51dbce"
+  },
+  "kadira": {
+    "appId": "CBdsKW4vmd4Lb69ur",
+    "appSecret": "2ffd4542-7dd0-45b6-9447-4c62c9e4e002"
+  },
+  "loggly": {
+    "token": "fbfc83c6-73cf-4314-9216-0b10590069a6",
+    "subdomain": "dengorbachev",
+    "tags": ["prod"],
+    "silent": false
+  },
+  "cluster": {
+    "count": 5
+  },
+  "job": {
+    "attempts": {
+      "count": 3,
+      "delay": 500,
+      "strategy": "exponential"
+    }
+  },
+  "public": {
+    "pack": "",
+    "env": "prod",
+    "isApplyingPack": false,
+    "version": "__VERSION__",
+    "isDebug": false,
+    "isMaintenance": false,
+    "isOlarkEnabled": true,
+    "extension": {
+      "name": "Trello Fixin Pack",
+      "description": "Fixin icon made by Freepik (http://www.flaticon.com/authors/freepik) licensed by CC BY 3.0",
+      "urls": ["*://trello.com/*"]
+    },
+    "extension": {
+      "name": "Trello Fixin Pack",
+      "description": "Fixin icon made by Freepik (http://www.flaticon.com/authors/freepik) licensed by CC BY 3.0",
+      "urls": ["*://trello.com/*"]
+    },
+    "google": {
+      "clientId": "621241673357-h000pjabs99uk0cef01oq5c7pe7jpiq3.apps.googleusercontent.com"
+    },
+    "facebook": {
+      "appId": "1615731861993144"
+    },
+    "stripe": {
+      "key": "pk_live_23abfSTrwQ0KGZRSlqFEtSyz"
+    },
+    "ga": {
+      "property": "UA-58516053-1",
+      "disabled": false
+    },
+    "mixpanel": {
+      "token": "8e771da7d0fe34cc9779d8192550cb7e",
+      "disabled": false
+    }
+  }
+}

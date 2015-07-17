@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+MONGO_DUMP_DIR=`echo "/tmp/$DOMAIN" | sed 's/\./_/g'`
+
+# rm -rf $MONGO_DUMP_DIR/meteor_accounts_loginServiceConfiguration*
+$DIRNAME/reload
+mongorestore --drop -h 127.0.0.1:3001 --db meteor $MONGO_DUMP_DIR

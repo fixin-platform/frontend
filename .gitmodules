@@ -1,0 +1,15 @@
+[submodule "packages/frontend-core"]
+	path = packages/frontend-core
+	url = https://github.com/fixin-platform/frontend-core.git
+[submodule "packages/frontend-foundation"]
+	path = packages/frontend-foundation
+	url = https://github.com/fixin-platform/frontend-foundation.git
+[submodule "packages/frontend-adapter"]
+	path = packages/frontend-adapter
+	url = https://github.com/fixin-platform/frontend-adapter.git
+[submodule "packages/frontend-checkmark"]
+	path = packages/frontend-checkmark
+	url = https://github.com/fixin-platform/frontend-checkmark.git
+[submodule "packages/frontend-wishpool"]
+	path = packages/frontend-wishpool
+	url = https://github.com/fixin-platform/frontend-wishpool.git

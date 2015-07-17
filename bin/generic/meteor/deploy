@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eux
+
+SETTINGS="$DIRNAME/../settings/$SUBPROJECT-prod.json"
+
+meteor deploy --settings $SETTINGS $DOMAIN
+
+set +e # meteor exits with an error if the user is already authorized
+meteor authorized $DOMAIN --add icyeagle
+meteor authorized $DOMAIN --add starfall
+meteor authorized $DOMAIN --add wsoul
+set -e

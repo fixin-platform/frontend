@@ -1,0 +1,19 @@
+{
+  "servers": [
+    {
+      "host": "52.2.71.155",
+      "username": "ubuntu",
+      "pem": "~/Dropbox/workspace/foreach/bellefit.pem"
+    }
+  ],
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.36",
+  "setupPhantom": false,
+  "appName": "foreach",
+  "app": "~/workspace/foreach",
+  "env": {
+    "ROOT_URL": "http://automation.bellefit.com"
+  },
+  "deployCheckWaitTime": 15
+}

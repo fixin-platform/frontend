@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+DOMAIN=foreach.pintask.me
+
+source $DIRNAME/generic/mongo/production-mongo

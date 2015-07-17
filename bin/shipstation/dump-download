@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source $DIRNAME/generic/meteor/dump-download
+source $DIRNAME/generic/postgres/dump-download

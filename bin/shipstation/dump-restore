@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source $DIRNAME/generic/meteor/dump-restore
+source $DIRNAME/generic/postgres/dump-restore

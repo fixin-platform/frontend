@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -eux
+
+if pgrep "dropbox" > /dev/null
+then
+  echo "Dropbox is running."
+else
+  echo "Dropbox isnt running!"
+  exit 1
+fi
+
+
+COMMAND=deploy
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+source $DIRNAME/generic/execute

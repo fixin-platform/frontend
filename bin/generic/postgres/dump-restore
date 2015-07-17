@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+POSTGRES_OUT_DIR=`echo "/tmp/postgres_$SUBPROJECT" | sed 's/\./_/g'`
+
+pkill -SIGKILL -f meteor.*
+
+RUN_ON_DB="psql -U foreach --set ON_ERROR_STOP=on --set AUTOCOMMIT=off postgres"
+$RUN_ON_DB <<SQL
+SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'foreach_local';
+commit;
+SQL
+
+$RUN_ON_DB <<SQL
+DROP DATABASE foreach_local;
+SQL
+
+createdb foreach_local
+
+pg_restore -d foreach_local -O -x -Fd $POSTGRES_OUT_DIR

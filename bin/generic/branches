@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eux
+
+declare -A BRANCHES
+
+BRANCHES[master]=master
+BRANCHES[shipstation]=shipstation
+BRANCHES[plshipstation]=shipstation
+BRANCHES[kolin]=kolin
+BRANCHES[stage]=stage
+BRANCHES[trello]=trello
+BRANCHES[lyndon]=lyndon
+BRANCHES[bellefit]=bellefit

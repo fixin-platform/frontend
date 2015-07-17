@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+DOMAIN=foreach.pintask.me
+
+source $DIRNAME/generic/meteor/dump-download
+source $DIRNAME/generic/postgres/dump-download

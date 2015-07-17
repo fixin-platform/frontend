@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eux
+
+USERNAME=$(<~/Dropbox/workspace/foreach/access/${SUBPROJECT}/mongo/username)
+PASSWORD=$(<~/Dropbox/workspace/foreach/access/${SUBPROJECT}/mongo/password)
+HOST=$(<~/Dropbox/workspace/foreach/access/${SUBPROJECT}/mongo/host)
+PORT=$(<~/Dropbox/workspace/foreach/access/${SUBPROJECT}/mongo/port)
+DB=$(<~/Dropbox/workspace/foreach/access/${SUBPROJECT}/mongo/db)
+
+mongo $HOST:$PORT/$DB -u $USERNAME -p $PASSWORD

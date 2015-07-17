@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+METEOR_DOMAIN="foreach-stage.meteor.com"
+
+if [[ "$METEOR_DOMAIN" == "" ]]
+then
+	echo "Usage:"
+	echo "$0 site"
+	exit 1
+fi
+
+# REGEX ALL THE THINGS.
+# Chomps the goodness flakes out of urls like "mongodb://client:pass-word@skybreak.member0.mongolayer.com:27017/goto_meteor_com"
+MONGO_URL_REGEX="mongodb:\/\/(.*):(.*)@(.*)\/(.*)"
+
+# stupid tmp file as meteor may want to prompt for a password
+TMP_FILE="/tmp/meteor-dump.tmp"
+
+# Get the mongo url for your meteor app
+meteor mongo $METEOR_DOMAIN --url | tee "${TMP_FILE}"
+MONGO_URL=$(sed '/Password:/d' "${TMP_FILE}")
+
+# clean up the temp file
+if [[ -f "${TMP_FILE}" ]]
+then
+  rm "${TMP_FILE}"
+fi
+
+if [[ $MONGO_URL =~ $MONGO_URL_REGEX ]]
+then
+  MONGO_USER="${BASH_REMATCH[1]}"
+  MONGO_PASSWORD="${BASH_REMATCH[2]}"
+  MONGO_DOMAIN="${BASH_REMATCH[3]}"
+  MONGO_DB="${BASH_REMATCH[4]}"
+  MONGO_OUT_DIR="/tmp"
+
+  echo "store prod database to stage"
+  mongorestore --drop -h $MONGO_DOMAIN -u $MONGO_USER -p "${MONGO_PASSWORD}" --db $MONGO_DB $MONGO_OUT_DIR/foreach
+fi

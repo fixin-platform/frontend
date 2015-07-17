@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -eux
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+if [[ -z ${SUBPROJECT+x} ]]
+then
+  BRANCH=${SUBPROJECT:-$(git rev-parse --abbrev-ref HEAD)}
+  INIT=$DIRNAME/generic/branches
+  source $INIT
+  if [ "$BRANCH" != "HEAD" ]
+  then
+    if [ ${BRANCHES[$BRANCH]+_} ]
+    then
+      SUBPROJECT=${BRANCHES[$BRANCH]}
+    else
+      echo "Branch \"$BRANCH\" is not linked to any subproject. Please add a link record to \"$INIT\""
+      exit 1
+    fi
+  fi
+
+  if [[ -z ${SUBPROJECT+x} ]]
+  then
+    echo "Can't determine subproject. Either set it manually via SUBPROJECT environment variable or checkout a branch that is linked to subproject."
+    exit 1
+  fi
+fi
+
+source $DIRNAME/$SUBPROJECT/config
